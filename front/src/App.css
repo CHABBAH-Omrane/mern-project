@@ -1,5 +1,5 @@
 @media screen and (max-width: 400px) {
-  #features {
+  #etapes {
     padding: 20px;
     width: 111%;
   }
@@ -15,4 +15,18 @@
   #portfolio {
     width: 110%;
   }
+}
+
+.modal-backdrop.fade {
+  opacity: inherit !important;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.modal.show {
+  opacity: 1 !important;
+  display: flex !important;
+  align-items: flex-end;
+  justify-content: center;
+  /* margin-top: 200px; */
+  min-height: 100vh;
 }

@@ -4,15 +4,17 @@ const   partner  =require ('../models/partnersSchema.js')
 //         list of partners
 // add new partner
 exports.newPartner= async (req, res) =>{
-    const { categorie,title,nameManger,e_mail,phoneNum,desc ,address,logo,photos,videos,links,rating,comments} =req.body
-
+    const { categories,title,nameManger,e_mail, phoneNum ,desc ,address,photos,videos,facebook,instagram,rating,comments} =req.body
+    // ,logo
     const existPartner = await partner.findOne({title:title})
-    if(existPartner)res.status(400).json({msg: "have an account"})
+    if(existPartner) return res.status(400).json({msg: "have an account"})
 
-    const newPartner = new  partner({ categorie,title,nameManger,e_mail,phoneNum,desc ,address,logo,photos,videos,links,rating,comments})
-    newPartner.save()
+    const newPartner = new  partner({ categories,title,nameManger,e_mail, phoneNum, desc ,address,photos,videos,facebook,instagram,rating,comments})
+    // ,logo
+    await newPartner.save()
+    // res.json({msg:"hay success"})
     .then((partner)=>res.send(partner))
-    .catch((err)=>res.status(404).send({msg:`we cannot add partner ${err}`}))
+    .catch((err)=>res.status(500).json({msg: err.message}))
 }
 
 //find all the partners

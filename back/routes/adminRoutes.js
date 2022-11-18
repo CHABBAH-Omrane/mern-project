@@ -15,7 +15,9 @@ const  storage = multer.diskStorage({
         callback( null, file.originalname)
     }
 })
+
 const upload =multer ({storage: storage })
+
 const multipleUpload = upload.fields([{name: "logo" }, {name:"photos", maxCount:5 },{name: "videos" }])
 // we need to add multiple on the input with photos
 

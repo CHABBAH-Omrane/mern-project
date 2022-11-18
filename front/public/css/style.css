@@ -221,7 +221,7 @@ a:focus,
 }
 .intro h1 {
   font-family: "Raleway", sans-serif;
-  color: #fff;
+  color: #261b0c;
   font-size: 82px;
   font-weight: 700;
   text-transform: uppercase;
@@ -233,7 +233,7 @@ a:focus,
   color: #5ca9fb;
 }
 .intro p {
-  color: #fff;
+  color: rgb(255, 255, 255);
   font-size: 22px;
   font-weight: 300;
   line-height: 30px;
@@ -245,11 +245,11 @@ header .intro-text {
   padding-bottom: 200px;
   text-align: center;
 }
-/* Features Section */
-#features {
+/* etapes Section */
+#etapes {
   background: #f6f6f6;
 }
-#features i.fa {
+#etapes i.fa {
   font-size: 38px;
   margin-bottom: 20px;
   transition: all 0.5s;

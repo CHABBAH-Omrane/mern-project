@@ -1,19 +1,21 @@
-import { useState, useEffect } from "react";
 import { Navigation } from "./components/navbar/navbar";
-import { Header } from "./components/header/header";
-import { Features } from "./components/features";
-import { About } from "./components/about";
-import { Services } from "./components/services";
-import { Gallery } from "./components/gallery";
-import { Testimonials } from "./components/testimonials";
-import { Team } from "./components/Team";
-import { Contact } from "./components/contact";
-import JsonData from "./data/data.json";
+
+import Contacts from "./pages/Contacts";
+
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-//test
-import { Partner } from "./components/partner/partner";
+import Home from "./pages/Home";
+
+// //test
+// import { useState, useEffect } from "react";
+// import JsonData from "./data/data.json";
+import Events from "./pages/Events";
+import Service from "./pages/Service";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 
 //
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -22,23 +24,23 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 const App = () => {
-  const [landingPageData, setLandingPageData] = useState({});
-  useEffect(() => {
-    setLandingPageData(JsonData);
-  }, []);
+  // const [landingPageData, setLandingPageData] = useState({});
+  // useEffect(() => {
+  //   setLandingPageData(JsonData);
+  // }, []);
 
   return (
     <div>
       <Navigation />
-      <Header data={landingPageData.Header} />
-      <Features data={landingPageData.Features} />
-      <About data={landingPageData.About} />
-      <Services data={landingPageData.Services} />
-      <Gallery data={landingPageData.Gallery} />
-      <Testimonials data={landingPageData.Testimonials} />
-      <Team data={landingPageData.Team} />
-      <Partner data={landingPageData.Gallery} /> {/* test */}
-      <Contact data={landingPageData.Contact} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Events" element={<Events />} />
+        <Route path="/contact" element={<Contacts />} />
+        <Route path="/services" element={<Service />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
     </div>
   );
 };

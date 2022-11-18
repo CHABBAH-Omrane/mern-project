@@ -3,20 +3,17 @@ const Schema =mongoose.Schema
 
 
 const customerSchema= new Schema ({
-    userName: {required: true,type:String},
-    e_mail: {required: true,type:String},
-    passWord: {required: true,type:String},
+    // userName: {required: true,type:String},
     fname: {required: true,type:String},
     lname: {required: true,type:String},
+    e_mail: {required: true,type:String},
+    passWord: {required: true,type:String},
     gender: String,
     reviews: String,
-    phoneNum: {
-        num1:{required: true,type:Number},
-        num2:Number},
+    phoneNum:    {required: true,type:Number},
     adress : String ,
     date: {default: Date.now,type:Date},
-    isAdmin:{type:Boolean,
-    default:false}
+    isAdmin:{type:Boolean,default:false}
 })
 
 module.exports =mongoose.model("customer",customerSchema)

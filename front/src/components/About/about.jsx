@@ -10,8 +10,15 @@ export const About = (props) => {
           <div className="col-xs-12 col-md-6">
             <div className="about-text">
               <h2>About Us</h2>
-              <p>{props.data ? props.data.paragraph : "loading..."}</p>
-              <h3>Why Choose Us?</h3>
+              <p>
+                ORGANISATION DE VOTRE MARIAGE De A à Z, parce que vous souhaitez
+                continuer à profiter de la vie pendant l’organisation de votre
+                mariage : Élaboration du cahier des charges, recherches de lieux
+                et prestataires, gestion des invités, proposition d’idées
+                originales, planification de votre journée…
+              </p>
+              {/* <p>{props.data ? props.data.paragraph : "loading..."}</p> */}
+              {/* <h3>Why Choose Us?</h3>
               <div className="list-style">
                 <div className="col-lg-6 col-sm-6 col-xs-12">
                   <ul>
@@ -28,10 +35,11 @@ export const About = (props) => {
                       ? props.data.Why2.map((d, i) => (
                           <li key={`${d}-${i}`}> {d}</li>
                         ))
-                      : "loading"}
+                      : "loading"} 
+                    
                   </ul>
-                </div>
-              </div>
+                </div> 
+              </div>*/}
             </div>
           </div>
         </div>
