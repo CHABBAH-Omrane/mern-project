@@ -44,7 +44,7 @@ p.intro {
   line-height: 24px;
 }
 a {
-  color: #e2d2bb ;
+  color: #000000 ;
   font-weight: 400;
 }
 a:hover,
@@ -59,8 +59,8 @@ ol {
 ul,
 ol {
   padding: 0;
-  webkit-padding: 0;
-  moz-padding: 0;
+  /* webkit-padding: 0;
+  moz-padding: 0; */
 }
 hr {
   height: 2px;
@@ -193,6 +193,8 @@ hr {
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+  
+  
 }
 a:focus,
 .btn:focus,
@@ -202,6 +204,7 @@ a:focus,
 .btn:active.focus,
 .btn.active.focus {
   outline: none;
+  
   outline-offset: none;
 }
 /* Header Section */
@@ -216,6 +219,7 @@ a:focus,
   background-size: cover;
   -o-background-size: cover;
 }
+
 .intro .overlay {
   background: rgba(0, 0, 0, 0.2);
 }
@@ -245,7 +249,50 @@ header .intro-text {
   padding-bottom: 200px;
   text-align: center;
 }
-/* etapes Section */
+
+/* Header partner Section */
+.intro-hed {
+  display: table;
+  width: 100%;
+  padding: 0;
+  background: url(../img/Troupe-header.jpg) center center no-repeat;
+  background-color: #e5e5e5;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.intro-hed .overlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+.intro-hed h1 {
+  font-family: "Raleway", sans-serif;
+  color: #c0b29e;
+  font-size: 82px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.intro-hed h1 span {
+  font-weight: 800;
+  color: #5ca9fb;
+}
+.intro-hed p {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+header .intro-text {
+  padding-top: 350px;
+  padding-bottom: 200px;
+  text-align: center;
+}
+
+/* etape Section */
 #etapes {
   background: #f6f6f6;
 }

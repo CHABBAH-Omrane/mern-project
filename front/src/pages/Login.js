@@ -13,152 +13,152 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { useState,useEffect } from 'react';
-import {useDispatch, useSelector} from 'react-redux'
-import {useNavigate}from 'react-router-dom'
-import  LoginCus  from '../actions/authCustomerActions.JS';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { LoginCus } from '../actions/authCustomerActions';
 
 // function copyrith fin de page 
 function Copyright(props) {
-    return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-          Your Website
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  }
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
-  const theme = createTheme();
+const theme = createTheme();
 
 
 const Login = () => {
   // entre to profil with isAuth
-  const isAuth=useSelector(state=>state.authCustomerReducer.isAuth)
+  const isAuth = useSelector(state => state.authCustomerReducer.isAuth)
 
-const dispatch=useDispatch()
-const navigate=useNavigate()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  const  [input,setInput]= useState({
-    fname:"", lname:"",  e_mail:"", adress:"", passWord:"", phoneNum:"",
-})
+  const [input, setInput] = useState({
+    fname: "", lname: "", e_mail: "", adress: "", passWord: "", phoneNum: "",
+  })
 
-const handleChange= (e) =>{
-  e.preventDefault();
-  setInput({...input,[e.target.name]:e.target.value})
-  
-}
- 
-    const handleSubmit= (e)=>{
-      e.preventDefault();
-      dispatch (LoginCus(input))
-    }
-    
-     // when update state isAuth change the navigate 
-     useEffect(()=>{
-      if(isAuth)
-      navigate('./profile')
-  },[isAuth])
-     
+  const handleChange = (e) => {
+    e.preventDefault();
+    setInput({ ...input, [e.target.name]: e.target.value })
+
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(LoginCus(input))
+  }
+
+  // when update state isAuth change the navigate 
+  useEffect(() => {
+    if (isAuth)
+      navigate('/partners')
+  }, [isAuth])
+
 
   return (
     <div>
-        <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh'}}>
-        <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: 'url(http://localhost:3000/img/logo.png)',
-            backgroundRepeat: 'no-repeat',//url(https://source.unsplash.com/random)
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            height: '60%',
-            marginTop:'100px'
-          }}
-          
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
+      <ThemeProvider theme={theme}>
+        <Grid container component="main" sx={{ height: '100vh' }}>
+          <CssBaseline />
+          <Grid
+            item
+            xs={false}
+            sm={4}
+            md={7}
             sx={{
-              my: 8,
-              mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-               marginTop:'100px'
+              backgroundImage: 'url(http://localhost:3000/img/logo.png)',
+              backgroundRepeat: 'no-repeat',//url(https://source.unsplash.com/random)
+              backgroundColor: (t) =>
+                t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              height: '60%',
+              marginTop: '100px'
             }}
-          >
-            <Avatar sx={{ m: 1, bgcolor: '#bca086' }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
-            <Box component="form" noValidate  sx={{ mt: 1 }}>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="e_mail"
-                label="Email Address"
-                name="e_mail"
-                autoComplete="email"
-                autoFocus
-                onChange={handleChange}
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="passWord"
-                label="Password"
-                type="password"
-                id="passWord"
-                autoComplete="current-password"
-                onChange={handleChange}
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                // variant="contained" color="success"
-                variant="contained" color="inherit"
-                sx={{ mt: 3, mb: 2 }}
-               onClick={handleSubmit}
-              >
-                Sign In
-              </Button>
-             
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
+
+          />
+          <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+            <Box
+              sx={{
+                my: 8,
+                mx: 4,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: '100px'
+              }}
+            >
+              <Avatar sx={{ m: 1, bgcolor: '#bca086' }}>
+                <LockOutlinedIcon />
+              </Avatar>
+              <Typography component="h1" variant="h5">
+                Sign in
+              </Typography>
+              <Box component="form" noValidate sx={{ mt: 1 }}>
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="e_mail"
+                  label="Email Address"
+                  name="e_mail"
+                  autoComplete="email"
+                  autoFocus
+                  onChange={handleChange}
+                />
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="passWord"
+                  label="Password"
+                  type="password"
+                  id="passWord"
+                  autoComplete="current-password"
+                  onChange={handleChange}
+                />
+                <FormControlLabel
+                  control={<Checkbox value="remember" color="primary" />}
+                  label="Remember me"
+                />
+                <Button
+                  type="submit"
+                  fullWidth
+                  // variant="contained" color="success"
+                  variant="contained" color="inherit"
+                  sx={{ mt: 3, mb: 2 }}
+                  onClick={handleSubmit}
+                >
+                  Sign In
+                </Button>
+
+                <Grid container>
+                  <Grid item xs>
+                    <Link href="#" variant="body2">
+                      Forgot password?
+                    </Link>
+                  </Grid>
+                  <Grid item>
+                    <Link href="#" variant="body2">
+                      {"Don't have an account? Sign Up"}
+                    </Link>
+                  </Grid>
                 </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
-              <Copyright sx={{ mt: 5 }} />
+                <Copyright sx={{ mt: 5 }} />
+              </Box>
             </Box>
-          </Box>
+          </Grid>
         </Grid>
-      </Grid>
-    </ThemeProvider>
+      </ThemeProvider>
     </div>
   )
 }

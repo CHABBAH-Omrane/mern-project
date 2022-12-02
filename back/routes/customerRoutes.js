@@ -1,19 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
+const { registerAuth } = require('../controllers/registerAuth.js')
+const { login, signinUser } = require('../controllers/login.js')
+const { selectPartners } = require('../controllers/select.js')
 
+router.post('/addCustomer', registerAuth)
+router.post('/signin', login)
+router.post('/select', selectPartners)
 
-const {registerAuth} = require('../controllers/registerAuth.js')
-const {login} = require('../controllers/login.js')
-const {selectPartners} = require('../controllers/select.js')
-
-router.post('/addCustomer',registerAuth)
-
-router.post('/signin',login) 
-
-router.post('/select',selectPartners) 
-
-
+router.get('/signinUser', signinUser)//role
 
 module.exports = router
 

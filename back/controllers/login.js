@@ -22,3 +22,13 @@ exports.login = async (req,res)=>{
 
     } 
 }
+
+
+//role
+    exports.signinUser = (req,res)=>{
+        if( req.body.customer){  
+        res.send({loggedIn: true,customer: req.body.customer })
+        }else {
+            res.send({ loggedIn:false})
+        }
+    }

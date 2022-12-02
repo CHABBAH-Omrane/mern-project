@@ -5,11 +5,12 @@ import JsonData from "../data/data.json";
 import { Header } from "../components/header/header";
 import { Etapes } from "../components/Etapes/etapes";
 import { About } from "../components/About/about";
+// import Slider from '../components/SliderHome/sliderHome';
 
 
-import { Testimonials } from "../components/testimonials";
-import { Team } from "../components/Team";
-import { Partner } from "../components/partner/partner";
+
+// import { Testimonials } from "../components/testimonials";
+// import { Team } from "../components/Team";
 
 
 const Home = () => {
@@ -20,16 +21,14 @@ const Home = () => {
   }, []);
   return (
     <div>
-       <>
-              
-              <Header data={landingPageData.Header} />
-              <Etapes data={landingPageData.Features} />
-              <About data={landingPageData.About} />
-              
-              {/* <Testimonials data={landingPageData.Testimonials} />
-              <Team data={landingPageData.Team} /> */}
-              <Partner data={landingPageData.Gallery} /> test
-            </>
+      <>
+
+        <Header data={landingPageData.Header} />
+        <Etapes data={landingPageData.Features} />
+        <About data={landingPageData.About} />
+
+
+      </>
     </div>
   )
 }

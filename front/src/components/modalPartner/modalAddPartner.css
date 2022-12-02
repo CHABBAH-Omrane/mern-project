@@ -1,4 +1,4 @@
-.partList{
+.partList {
     display: flex;
     background-color: #f6f6f6;
     padding: 20px;
@@ -6,38 +6,42 @@
     border: 1px solid #e2d2bb;
     border-radius: 15px
 }
-.logo{
-    width:20%;
-            height: 100%;
-            padding-left:20px;
+
+.logo {
+    width: 20%;
+    height: 100%;
+    padding-left: 20px;
 }
-.vertical-line{
+
+.vertical-line {
     border-left: 2px solid #e2d2bb;
     display: inline-block;
     margin: 0 20px;
 }
 
-.middle-part{
+.middle-part {
     width: 60%;
-            padding-left: 20px;
+    padding-left: 20px;
 }
-.last-part{
+
+.last-part {
     width: 20%;
     padding-left: 20px
 }
-.caractrestics{
+
+.caractrestics {
     display: flex;
     justify-content: space-between;
 }
 
-.separation-line{
+.separation-line {
     width: 100%;
     height: 2px;
     margin: 0;
     background-color: #e2d2bb;
 }
 
-.btn-space{
+.btn-space {
     display: flex;
-              justify-content: space-around;
+    justify-content: space-around;
 }

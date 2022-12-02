@@ -1,5 +1,11 @@
 {
   "dependencies": {
     "concurrently": "^7.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "backend": "nodemon serverGlob.js",
+    "front": "cd front && npm start ",
+    "dev": "concurrently  \"npm run backend\" \" npm run front\" "
   }
 }

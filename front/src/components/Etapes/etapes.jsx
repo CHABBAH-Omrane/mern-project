@@ -6,17 +6,6 @@ export const Etapes = (props) => {
           <h2>Les Etapes</h2>
         </div>
         <div className="row">
-          {/* {props.data
-            ? props.data.map((d, i) => (
-                <div key={`${d.title}-${i}`} className="col-xs-6 col-md-3">
-                  {" "}
-                  <i className={d.icon}></i>
-                  <h3>{d.title}</h3>
-                  <p>{d.text}</p>
-                </div>
-                
-              ))
-            : "Loading..."} */}
           <div key={1} className="col-xs-6 col-md-3">
             <i className="fa fa-search"></i>
             <h3>Chercher</h3>

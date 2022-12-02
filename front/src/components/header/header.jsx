@@ -6,7 +6,6 @@ export const Header = (props) => {
           <div className="container">
             <div className="row">
               <div>
-                {/* <img src="img/logo-removebg-preview.jp" alt="sss " /> */}
               </div>
               <div className="col-md-8 col-md-offset-2 intro-text">
                 <h1>
@@ -17,7 +16,6 @@ export const Header = (props) => {
                   Organiser son mariage en Tunisie en toute simplicité : Salle
                   des fetes, Troupe musicale, photographe.....
                 </p>
-                {/* <p>{props.data ? props.data.paragraph : "Loading"}</p> */}
                 <a href="#etapes" className="btn btn-custom btn-lg page-scroll">
                   voir plus
                 </a>{" "}

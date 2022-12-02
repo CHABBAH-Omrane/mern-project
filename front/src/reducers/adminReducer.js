@@ -1,22 +1,26 @@
-import {ADD_PARTNER ,GET_PARTNER }  from "../actions/types" 
+import { GET_PARTNER, GET_CONTACTLIST, GET_USERSLIST } from "../actions/types"
 // on a pas besion de add_partner puisque ajout f font direct
 
 const initState = {
-    partners:[]
+    partners: [],
+    contacts: [],
+    usersList: []
 }
 
-const adminReducer = (state= initState ,{type,payload} )=>{
-    switch(type){
-    // case ADD_PARTNER:
-    //     return {
-    //         ...state,
-    //         partners : payload
-    //     }
-        
-        // {...state,partners:[...state.partners,payload]}
-    case GET_PARTNER:
-        return {...state,partners:payload}
-    default:
-        return state;
-}}
+
+const adminReducer = (state = initState, { type, payload }) => {
+    switch (type) {
+
+        case GET_PARTNER:
+            return { ...state, partners: payload }
+
+        case GET_CONTACTLIST:
+            return { ...state, contacts: payload }
+
+        case GET_USERSLIST:
+            return { ...state, usersList: payload }
+        default:
+            return state;
+    }
+}
 export default adminReducer
