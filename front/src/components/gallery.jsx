@@ -16,9 +16,9 @@ export const Gallery = ({ partners }) => {
         <div className="row">
         </div>
         <div>
-          <div className="row">
+          <div className="row" style={{marginBottom:'100px'}}>
             <h1>Liste Des Salles Des Fétes </h1>
-            <h5>
+            <h5 style={{marginBottom:'50px'}}>
               On connais tous le nombre d'invités important dans les mariages
               tunisiens. Pour une fête réussie,
               <br /> la salle compte énormément et trouver l’espace de rêve pour
@@ -42,9 +42,9 @@ export const Gallery = ({ partners }) => {
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row" style={{marginBottom:'100px'}}>
             <h1>Liste Des Troupes Musicales </h1>
-            <h5>
+            <h5 style={{marginBottom:'50px'}}>
               On vous facilite la tâche et on partage avec vous des troupes
               musicales bien réputées en Tunisie <br />
               pour une ambiance de mariage exceptionnelle le Jour J.
@@ -67,9 +67,9 @@ export const Gallery = ({ partners }) => {
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row"style={{marginBottom:'100px'}}>
             <h1>Liste Des Photographes </h1>
-            <h5>
+            <h5 style={{marginBottom:'50px'}}>
               Le plus important dans un mariage ? C’est la personne qui va
               immortaliser les moments les plus magiques du plus beau jour de
               votre vie !<br /> Vous ne savez pas quel photographe choisir et

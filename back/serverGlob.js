@@ -16,6 +16,12 @@ app.use("/uploads", express.static(__dirname + "/uploads")) //when we uploads im
 //Difine Routes
 app.use('/', (require("./routes/visitorRoutes")))
 app.use('/admin', (require("./routes/adminRoutes")))
+/*
+app.use('/customer/abcd', express.Router().get('/', (req,res)=>{
+    console.log("HI THERE");
+    return res.json({message: "IM WORKING"})
+}))
+*/
 app.use('/customer', (require("./routes/customerRoutes")))
 
 
