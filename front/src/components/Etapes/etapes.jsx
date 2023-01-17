@@ -13,7 +13,7 @@ export const Etapes = (props) => {
           </div>
           <div key={1} className="col-xs-6 col-md-3">
             <i className="fa fa-check"></i>
-            <h3>Choisissez</h3>
+            <h3>Choisir</h3>
             <p>
               Vous pouvez choisir les meilleurs partenaires par rapport à votre
               besoin.

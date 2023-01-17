@@ -31,7 +31,7 @@ export const Partner = () => {
   }, []);
 
   const partners = useSelector((state) => state.adminReducer.partners);
-  console.log("artners", partners);
+  // console.log("artners", partners);
 
   return (
     <div id="all-partner">
@@ -107,8 +107,8 @@ export const Partner = () => {
         }
       </div>
       <div>
-        {/* interface customer */}
-        <div className="container partList">
+        {/*interface customer */}
+        {/* <div className="container partList">
           <img
             alt=""
             src="https://www.lasalledereception.fr/wp-content/uploads/2016/12/logo.png"
@@ -144,7 +144,6 @@ export const Partner = () => {
             <hr className="separation-line" />
             <div className="caractrestics">
               <h4>Note </h4>
-              {/* <ReactStars count={5} size={24} activeColor="#ffd700" /> */}
               {[...Array(5)].map((star, i) => {
                 const ratingValue = i + 1;
                 return (
@@ -156,8 +155,12 @@ export const Partner = () => {
               <Button variant="success ">Select</Button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
+
+{
+  /* <ReactStars count={5} size={24} activeColor="#ffd700" />  */
+}

@@ -1,26 +1,28 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../actions/authCustomerActions";
-// import { useState, useEffect } from "react";
-// import axios from "axios";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const Navigation = (props) => {
-  // const [role, setRole] = useState(false);
-
-  // useEffect(() => {
-  //   axios
-  //     .post("http://localhost:5000/customer/signin")
-  //     .then((response) => {
-  //       console.log("RESP", response);
-  //       if (response.data.loggedIn === true) {
-  //         setRole(response.data.customers[0].isAdmin); //customers
-  //       }
-  //     })
-  //     .catch((err) => console.log("ERR", err));
-  // }, []);
+  useEffect(() => {
+    try {
+    } catch (error) {}
+    // axios
+    //   .get("http://localhost:5000/customer/signinUser")
+    //   .then((response) => {
+    //     // console.log("RESP", response);
+    //     if (response.data.loggedIn === true) {
+    //       console.log(response.data);
+    //       setRole(response.data.customers[0].isAdmin); //customers
+    //     }
+    //   })
+    //   .catch((err) => console.log("ERR", err));
+  }, []);
 
   const dispatch = useDispatch();
-  const isAuth = useSelector((state) => state.authCustomerReducer.isAuth);
+  //const isAuth = useSelector((state) => state.authCustomerReducer.isAuth);
+  const user = useSelector((state) => state.authCustomerReducer.user);
   // return role ? "Hello" : "WHAAAT";
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
@@ -53,7 +55,7 @@ export const Navigation = (props) => {
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
-            {!isAuth ? (
+            {!user ? (
               <>
                 <li>
                   <a href="/" className="page-scroll">
@@ -86,145 +88,145 @@ export const Navigation = (props) => {
                 </li>
               </>
             ) : (
-              <>
-                <li>
-                  <a href="/" className="page-scroll">
-                    <Link to="/">Home</Link>
-                  </a>
-                </li>
-                <li>
-                  <a href="/partners" className="page-scroll">
-                    <Link to="/partners">Partners</Link>
-                  </a>
-                </li>
-                <li>
-                  <a href="/Events" className="page-scroll">
-                    <Link to="/Events">Gallery</Link>
-                    {/* Events*/}
-                  </a>
-                </li>
-                <li>
-                  <a href="/services" className="page-scroll">
-                    <Link to="/services" className="page-scroll">
-                      Services
-                    </Link>
-                  </a>
-                </li>
-                <li>
-                  <a href="/visitors" className="page-scroll">
-                    <Link to="/visitors" className="page-scroll">
-                      Visitors
-                    </Link>
-                  </a>
-                </li>
-                <li>
-                  <a href="/users" className="page-scroll">
-                    <Link to="/users" className="page-scroll">
-                      Users
-                    </Link>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="btn btn-custom btn-lg page-scroll"
-                    onClick={() => dispatch(logout())}
-                  >
-                    <Link to="/" className="page-scroll">
-                      Logout
-                    </Link>
-                  </a>{" "}
-                </li>
-              </>
               // <>
-              //   {role === true ? (
-              //     <>
-              //       <li>
-              //         <a href="/" className="page-scroll">
-              //           <Link to="/">Home</Link>
-              //         </a>
-              //       </li>
-              //       <li>
-              //         <a href="/partners" className="page-scroll">
-              //           <Link to="/partners">Partners</Link>
-              //         </a>
-              //       </li>
-              //       <li>
-              //         <a href="/Events" className="page-scroll">
-              //           <Link to="/Events">Gallery</Link>
-              //         </a>
-              //       </li>
-              //       <li>
-              //         <a href="/services" className="page-scroll">
-              //           <Link to="/services" className="page-scroll">
-              //             Services
-              //           </Link>
-              //         </a>
-              //       </li>
-              //       <li>
-              //         <a href="/visitors" className="page-scroll">
-              //           <Link to="/visitors" className="page-scroll">
-              //             Visitors
-              //           </Link>
-              //         </a>
-              //       </li>
-              //       <li>
-              //         <a href="/users" className="page-scroll">
-              //           <Link to="/users" className="page-scroll">
-              //             Users
-              //           </Link>
-              //         </a>
-              //       </li>
-              //       <li>
-              //         <a
-              //           href="/"
-              //           className="btn btn-custom btn-lg page-scroll"
-              //           onClick={() => dispatch(logout())}
-              //         >
-              //           <Link to="/" className="page-scroll">
-              //             Logout
-              //           </Link>
-              //         </a>{" "}
-              //       </li>
-              //     </>
-              //   ) : (
-              //     <>
-              //       <li>
-              //         <a href="/" className="page-scroll">
-              //           <Link to="/">Home</Link>
-              //         </a>
-              //       </li>
-              //       <li>
-              //         <a href="/partners" className="page-scroll">
-              //           <Link to="/partners">Partners</Link>
-              //         </a>
-              //       </li>
-              //       <li>
-              //         <a href="/Events" className="page-scroll">
-              //           <Link to="/Events">Gallery</Link>
-              //         </a>
-              //       </li>
-              //       <li>
-              //         <a href="/services" className="page-scroll">
-              //           <Link to="/services" className="page-scroll">
-              //             Services
-              //           </Link>
-              //         </a>
-              //       </li>
-              //       <li>
-              //         <a
-              //           href="/"
-              //           className="btn btn-custom btn-lg page-scroll"
-              //           onClick={() => dispatch(logout())}
-              //         >
-              //           <Link to="/" className="page-scroll">
-              //             Logout
-              //           </Link>
-              //         </a>{" "}
-              //       </li>
-              //     </>
-              //   )}
+              //   <li>
+              //     <a href="/" className="page-scroll">
+              //       <Link to="/">Home</Link>
+              //     </a>
+              //   </li>
+              //   <li>
+              //     <a href="/partners" className="page-scroll">
+              //       <Link to="/partners">Partners</Link>
+              //     </a>
+              //   </li>
+              //   <li>
+              //     <a href="/Events" className="page-scroll">
+              //       <Link to="/Events">Gallery</Link>
+              //       {/* Events*/}
+              //     </a>
+              //   </li>
+              //   <li>
+              //     <a href="/select" className="page-scroll">
+              //       <Link to="/select" className="page-scroll">
+              //         Select
+              //       </Link>
+              //     </a>
+              //   </li>
+              //   <li>
+              //     <a href="/visitors" className="page-scroll">
+              //       <Link to="/visitors" className="page-scroll">
+              //         Visitors
+              //       </Link>
+              //     </a>
+              //   </li>
+              //   <li>
+              //     <a href="/users" className="page-scroll">
+              //       <Link to="/users" className="page-scroll">
+              //         Users
+              //       </Link>
+              //     </a>
+              //   </li>
+              //   <li>
+              //     <a
+              //       href="/"
+              //       className="btn btn-custom btn-lg page-scroll"
+              //       onClick={() => dispatch(logout())}
+              //     >
+              //       <Link to="/" className="page-scroll">
+              //         Logout
+              //       </Link>
+              //     </a>{" "}
+              //   </li>
               // </>
+              <>
+                {user?.isAdmin ? (
+                  <>
+                    <li>
+                      <a href="/" className="page-scroll">
+                        <Link to="/">Home</Link>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/partners" className="page-scroll">
+                        <Link to="/partners">Partners</Link>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Events" className="page-scroll">
+                        <Link to="/Events">Gallery</Link>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/select" className="page-scroll">
+                        <Link to="/select" className="page-scroll">
+                          select
+                        </Link>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/visitors" className="page-scroll">
+                        <Link to="/visitors" className="page-scroll">
+                          Visitors
+                        </Link>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/users" className="page-scroll">
+                        <Link to="/users" className="page-scroll">
+                          Users
+                        </Link>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/"
+                        className="btn btn-custom btn-lg page-scroll"
+                        onClick={() => dispatch(logout())}
+                      >
+                        <Link to="/" className="page-scroll">
+                          Logout
+                        </Link>
+                      </a>{" "}
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <a href="/" className="page-scroll">
+                        <Link to="/">Home</Link>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/partners" className="page-scroll">
+                        <Link to="/partners">Partners</Link>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Events" className="page-scroll">
+                        <Link to="/Events">Gallery</Link>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/select" className="page-scroll">
+                        <Link to="/select" className="page-scroll">
+                          select
+                        </Link>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/"
+                        className="btn btn-custom btn-lg page-scroll"
+                        onClick={() => dispatch(logout())}
+                      >
+                        <Link to="/" className="page-scroll">
+                          Logout
+                        </Link>
+                      </a>{" "}
+                    </li>
+                  </>
+                )}
+              </>
             )}
           </ul>
         </div>

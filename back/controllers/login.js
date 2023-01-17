@@ -15,7 +15,7 @@ exports.login = async (req,res)=>{
 
         const token = jwt.sign({e_mail,id:customer._id},process.env.KEY_TOKEN,{expiresIn:"1h"})
         const { isAdmin,...other} = existCustomer._doc   //dont send the isAdmin and token , else next line
-        res.status(200).json({other}) //existCustomer,token
+        res.status(200).json({existCustomer,token}) //existCustomer,token //other
 
     }catch(error){
         res.status(500).json({msg:`we cannot login , error ${error}`})
